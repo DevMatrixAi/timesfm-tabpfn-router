@@ -1,0 +1,6 @@
+numpy==2.5.4
+torch==2.11.0
+timesfm==3.0.2
+tabpfn==9.1.0
+tabpfn-extensions==0.6.3
+pytest==9.1.1

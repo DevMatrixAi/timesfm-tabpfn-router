@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "timesfm-tabpfn-router"
+version = "0.1.0"
+description = "Research router with a calendar guard for frozen TimesFM-3 and TabPFN-3.5. Weights are not included."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+  "numpy==2.5.4",
+]
+
+[project.optional-dependencies]
+backbones = [
+  "torch==2.11.0",
+  "timesfm==3.0.2",
+  "tabpfn==9.1.0",
+  "tabpfn-extensions==0.6.3",
+]
+dev = [
+  "pytest==9.1.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
