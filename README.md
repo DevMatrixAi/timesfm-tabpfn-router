@@ -1,7 +1,5 @@
 # timesfm-tabpfn-router
 
-This is research code for the paper “When to Use a Time-Series Foundation Model, a Tabular Foundation Model, or Both: A Router with a Calendar Guard”.
-
 The router chooses among three already-scored forecasters: TimesFM-3 with known-future covariates (`timesfm_native_covariates`), TabPFN-3.5 (`tabpfn`), and the same TabPFN table with two TimesFM horizon summaries appended (`feature_pipe`). A ridge model predicts each system’s MASE and picks the minimum. Before that choice, the calendar guard forces TimesFM with covariates when every known-future column is a low-cardinality calendar field (hour, day of week, month, or the same kind of periodic indicator, at most 31 distinct values).
 
 TimesFM-3 and TabPFN-3.5 weights are not included and are under non-commercial licenses. TimesFM-3 (`google/timesfm-3.0-pytorch`) is under the TimesFM Non-Commercial License v1.0. TabPFN-3.5 is under the TabPFN-3.5 License v1.0. The MIT license in this repository covers the router and the calendar guard only. It does not relicense those weights, and this repository does not accept either weight license for you.
